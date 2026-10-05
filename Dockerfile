@@ -1,4 +1,4 @@
-# Dockerfile for the ML prediction API (FastAPI + scikit-learn)
+# Dockerfile for the sentiment analysis API (FastAPI + scikit-learn)
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -7,7 +7,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the training script and API code
+# Copy the dataset, training script and API code
+COPY datasets/ datasets/
 COPY train.py main.py ./
 
 # Train the model inside the image so model.pkl always exists

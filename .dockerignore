@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 venv/
 .git/
-datasets/
 *.md
 model.pkl
+.streamlit/
+streamlit_app.py
